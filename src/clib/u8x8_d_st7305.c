@@ -613,10 +613,10 @@ uint8_t u8x8_d_st7305_168x384(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *
   {
     case U8X8_MSG_DISPLAY_INIT:
       u8x8_d_helper_display_init(u8x8);
-      u8x8_cad_SendSequence(u8x8, u8x8_d_st7305_300x400_init_seq);    
+      u8x8_cad_SendSequence(u8x8, u8x8_d_st7305_168x384_init_seq);    
       break;
     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
-      u8x8_d_helper_display_setup_memory(u8x8, &u8x8_st7305_300x400_display_info);
+      u8x8_d_helper_display_setup_memory(u8x8, &u8x8_st7305_168x384_display_info);
       break;
     case U8X8_MSG_DISPLAY_SET_POWER_SAVE:
       if ( arg_int == 0 )
