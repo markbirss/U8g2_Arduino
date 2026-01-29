@@ -598,7 +598,7 @@ static const u8x8_display_info_t u8x8_st7305_168x384_display_info =
         /* write_pulse_width_ns = */ 70,
         /* tile_width = */ 40, /* tile width is 21*8=168, because this display requires 12 bit blocks, which would be 168 pixel, so next tile is at 168 */
         /* tile_height = */ 48,
-        /* default_x_offset = */ 0,
+        /* default_x_offset = */ 48,
         /* flipmode_x_offset = */ 0,
         /* pixel_width = */ 300, /* not 100% sure, whether this works with the tile_width of 21... */
         /* pixel_height = */ 400};
