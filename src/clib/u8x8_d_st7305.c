@@ -613,10 +613,10 @@ uint8_t u8x8_d_st7305_168x384(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *
   {
     case U8X8_MSG_DISPLAY_INIT:
       u8x8_d_helper_display_init(u8x8);
-      u8x8_cad_SendSequence(u8x8, u8x8_d_st7305_168x384_init_seq);    
+      u8x8_cad_SendSequence(u8x8, u8x8_d_st7305_300x400_init_seq);    
       break;
     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
-      u8x8_d_helper_display_setup_memory(u8x8, &u8x8_st7305_168x384_display_info);
+      u8x8_d_helper_display_setup_memory(u8x8, &u8x8_st7305_300x400_display_info);
       break;
     case U8X8_MSG_DISPLAY_SET_POWER_SAVE:
       if ( arg_int == 0 )
@@ -662,13 +662,13 @@ uint8_t u8x8_d_st7305_168x384(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *
       {
         
         u8x8_cad_SendCmd(u8x8, 0x2a);   // column address set
-        u8x8_cad_SendArg(u8x8, 0x17);   // 0x019 for the 122x250 LCD --> 0x016 for the 200x200 display
-        u8x8_cad_SendArg(u8x8, 0x24);  // 204 pixel for the 200x200 display
+        u8x8_cad_SendArg(u8x8, 0x12);   // 0x019 for the 122x250 LCD --> 0x016 for the 200x200 display
+        u8x8_cad_SendArg(u8x8, 0x2A);  // 204 pixel for the 200x200 display
       
         u8x8_cad_SendCmd(u8x8, 0x2b); 
         u8x8_cad_SendArg(u8x8, y+i); 
         u8x8_cad_SendArg(u8x8, y+i); 
-        u8x8_cad_SendCmd(u8x8, 0x2c);		// write data 
+        u8x8_cad_SendCmd(u8x8, 0xC7);		// write data 
       
         c = ((u8x8_tile_t *)arg_ptr)->cnt;
         ptr = ((u8x8_tile_t *)arg_ptr)->tile_ptr;
